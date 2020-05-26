@@ -7,7 +7,8 @@ export PATH=$PWD/rclone-v1.51.0-linux-amd64:$PATH
 
 # Install aria2c static binary
 wget -q https://github.com/fzfile/heroku-aria2c/raw/master/Aria2/aria2c
-export PATH=$PWD/aria2c:$PATH
+mv aria2c $PWD/aria2-1.35.0-linux-gnu-64bit-build1/
+export PATH=$PWD/aria2-1.35.0-linux-gnu-64bit-build1:$PATH
 
 # Create download folder
 mkdir -p downloads
