@@ -1,16 +1,14 @@
 #!/bin/bash
 
-apt install libssh2-dev -y
-
 # Install rclone static binary
 wget -q https://downloads.rclone.org/v1.51.0/rclone-v1.51.0-linux-amd64.zip
 unzip -q rclone-v1.51.0-linux-amd64.zip
 export PATH=$PWD/rclone-v1.51.0-linux-amd64:$PATH
 
 # Install aria2c static binary
-wget -q https://raw.githubusercontent.com/fzfile/heroku-aria2c/master/aria2.zip
-unzip -q aria2.zip
-export PATH=$PWD/Aria2:$PATH
+wget -q https://github.com/q3aql/aria2-static-builds/releases/download/v1.35.0/aria2-1.35.0-linux-gnu-64bit-build1.tar.bz2
+tar xf aria2-1.35.0-linux-gnu-64bit-build1.tar.bz2
+export PATH=$PWD/aria2-1.35.0-linux-gnu-64bit-build1:$PATH
 
 # Create download folder
 mkdir -p downloads
