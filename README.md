@@ -3,6 +3,8 @@
 
 替换了原作者里面的aria2为403 retry 版aria2
 
+下载115文件时请将线程改为2，115一个文件最多支持2线程下载，多了反而会降低速度。
+
 # Heroku aria2c
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
