@@ -1,3 +1,8 @@
+原版的aria2在下载115文件的时候会因为403错误停止，导致115文件下载失败，所以自己编译了myfreeer的403retry版aria2的linux版，
+地址是 https://github.com/myfreeer/aria2-build-msys2
+
+替换了原作者里面的aria2为403 retry 版aria2
+
 # Heroku aria2c
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
