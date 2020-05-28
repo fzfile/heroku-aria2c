@@ -1,5 +1,5 @@
-原版的aria2在下载115文件的时候会因为403错误停止，导致115文件下载失败，myfreeer的可以在403错误重试的aria2没有linux版，所以自己编译了一个
-地址是 https://github.com/myfreeer/aria2-build-msys2
+原版的aria2在下载115文件的时候会因为403错误停止，导致115文件下载失败，myfreeer的可以在403错误重试的aria2没有linux版，所以自己编译了一个。
+原作者地址是 https://github.com/myfreeer/aria2-build-msys2
 
 替换了原作者里面的aria2为403错误可以重试的aria2
 
