@@ -1,8 +1,8 @@
 #!/bin/bash
 
 filePath=$3
-realativepath=$(expr "$filepath" : 'downloads\/\(.*\)')
-toppath=downloads/$(expr "$realativepath" : '\(.*?\)\/') # It will be the path of folder when it has multiple files, otherwise it will be the same as file path.
+realativePath=${filePath#downloads/}
+toppath=downloads/${relativePath%%/} # It will be the path of folder when it has multiple files, otherwise it will be the same as file path.
 
 echo $filePath
 echo $relativePath
