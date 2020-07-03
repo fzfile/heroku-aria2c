@@ -1,8 +1,8 @@
 #!/bin/bash
 
 filePath=$3
-realativePath=${filePath#downloads/}
-toppath=downloads/${relativePath%%/} # It will be the path of folder when it has multiple files, otherwise it will be the same as file path.
+relativePath=${filepath#./downloads/}
+topPath=./downloads/${relativePath%%/*} # It will be the path of folder when it has multiple files, otherwise it will be the same as file path.
 
 echo $filePath
 echo $relativePath
