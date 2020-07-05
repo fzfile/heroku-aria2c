@@ -5,7 +5,7 @@ wget -q https://github.com/donwa/gclone/releases/download/v1.51.0-mod1.3.1/gclon
 gunzip gclone_1.51.0-mod1.3.1_Linux_x86_64.gz
 mkdir -p gclone
 mv gclone_1.51.0-mod1.3.1_Linux_x86_64 gclone/gclone
-chmod +x gclone/gclone_1.51.0-mod1.3.1_Linux_x86_64
+chmod +x gclone/gclone
 export PATH=$PWD/gclone:$PATH
 
 # Install aria2c static binary
