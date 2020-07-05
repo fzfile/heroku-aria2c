@@ -1,9 +1,12 @@
 #!/bin/bash
 
 # Install rclone static binary
-wget -q https://downloads.rclone.org/v1.51.0/rclone-v1.51.0-linux-amd64.zip
-unzip -q rclone-v1.51.0-linux-amd64.zip
-export PATH=$PWD/rclone-v1.51.0-linux-amd64:$PATH
+wget -q https://github.com/donwa/gclone/releases/download/v1.51.0-mod1.3.1/gclone_1.51.0-mod1.3.1_Linux_x86_64.gz
+gunzip gclone_1.51.0-mod1.3.1_Linux_x86_64.gz
+mkdir -p gclone_1.51.0-mod1.3.1_Linux_x86_64
+mv gclone_1.51.0-mod1.3.1_Linux_x86_64 gclone_1.51.0-mod1.3.1_Linux_x86_64/gclone_1.51.0-mod1.3.1_Linux_x86_64
+chmod +x gclone_1.51.0-mod1.3.1_Linux_x86_64/gclone_1.51.0-mod1.3.1_Linux_x86_64
+export PATH=$PWD/gclone_1.51.0-mod1.3.1_Linux_x86_64:$PATH
 
 # Install aria2c static binary
 wget -q https://raw.githubusercontent.com/fzfile/heroku-aria2c/master/aria2.zip
@@ -21,3 +24,21 @@ wget -q https://github.com/P3TERX/aria2.conf/raw/master/dht6.dat
 # Tracker
 tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/master/trackers_all.txt | awk '$1' | tr '\n' ',' | cat`
 echo "bt-tracker=$tracker_list" >> aria2c.conf
+
+# SA files
+wget -q "${SA_FILE_URL}"
+unzip -q SA.zip
+
+# gclone configration
+if [[ -n $RCLONE_CONFIG && -n $RCLONE_DESTINATION ]]; then
+	echo "Rclone config detected"
+	echo -e "[DRIVE]\n$RCLONE_CONFIG" > rclone.conf
+	echo "service_account_file_path = ./SA/" > rclone.conf
+	echo "on-download-stop=./delete.sh" >> aria2c.conf
+	echo "on-download-complete=./on-complete.sh" >> aria2c.conf
+	chmod +x delete.sh
+	chmod +x on-complete.sh
+fi
+
+# aria2 configration
+echo "rpc-secret=$ARIA2C_SECRET" >> aria2c.conf
