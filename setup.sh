@@ -26,7 +26,7 @@ tracker_list=`curl -Ns https://raw.githubusercontent.com/ngosang/trackerslist/ma
 echo "bt-tracker=$tracker_list" >> aria2c.conf
 
 # SA files
-wget -q "${SA_FILE_URL}"
+wget -q "$SA_FILE_URL"
 unzip -q SA.zip
 
 # gclone configration
