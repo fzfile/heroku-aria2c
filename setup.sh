@@ -4,7 +4,7 @@
 wget -q https://github.com/donwa/gclone/releases/download/v1.51.0-mod1.3.1/gclone_1.51.0-mod1.3.1_Linux_x86_64.gz
 gunzip gclone_1.51.0-mod1.3.1_Linux_x86_64.gz
 mkdir -p gclone
-mv gclone_1.51.0-mod1.3.1_Linux_x86_64 gclone/gclone_1.51.0-mod1.3.1_Linux_x86_64
+mv gclone_1.51.0-mod1.3.1_Linux_x86_64 gclone/gclone
 chmod +x gclone/gclone_1.51.0-mod1.3.1_Linux_x86_64
 export PATH=$PWD/gclone:$PATH
 
