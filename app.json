@@ -20,7 +20,7 @@
 			"required": false
 		}
 		"SA_FILE_URL": {
-			"description": "Zip your sa file and set name as SA.zip, Upload to somewhere that can directly access, such as Google drive and use Goindex.",
+			"description": "Zip your sa file and set name as SA.zip, Upload to somewhere that only you can directly access, such as Google drive and use Goindex.",
 			"value": "SA_FILE_URL"
 		},
 	},
