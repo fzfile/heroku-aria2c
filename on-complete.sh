@@ -8,7 +8,7 @@ des=${relativePath%/*}
 if [ $2 -eq 0 ]; then
     exit 0
 elif [[ $2 -eq 1 ]]; then # single file
-	if [[ $des =~ '/' ]]; then
+	if [[ $relativePath =~ '/' ]]; then
 		gclone -v --config="rclone.conf" move "$3" "DRIVE:$RCLONE_DESTINATION/${des}"
 	else
 		gclone -v --config="rclone.conf" move "$3" "DRIVE:$RCLONE_DESTINATION/"
